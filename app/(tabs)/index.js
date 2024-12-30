@@ -18,8 +18,8 @@ export default function HomeScreen() {
   const [editMode, setEditMode] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
   const [genderOpen, setGenderOpen] = useState(false);
-  const [editedUser, setEditedUser] = useState(null); // To track changes
-  const [originalUser, setOriginalUser] = useState(null); // To revert to the original data
+  const [editedUser, setEditedUser] = useState(null); 
+  const [originalUser, setOriginalUser] = useState(null); 
 
   useEffect(() => {
     const loadUsers = () => {
@@ -40,9 +40,9 @@ export default function HomeScreen() {
       )
     );
     setEditMode(false);
-    setExpandedUser(updatedUser.id); // Keep the expanded user open after saving
+    setExpandedUser(updatedUser.id); 
     setEditedUser(null);
-    setOriginalUser(null); // Clear original user data after saving
+    setOriginalUser(null); 
   };
 
   const handleDelete = (userId) => {
@@ -73,15 +73,15 @@ export default function HomeScreen() {
     }
 
     setEditMode(true);
-    setOriginalUser({ ...item }); // Save the original user data for cancel
-    setEditedUser({ ...item }); // Set the initial edit data
-    setExpandedUser(item.id); // Ensure the accordion stays open for the user being edited
+    setOriginalUser({ ...item }); 
+    setEditedUser({ ...item }); 
+    setExpandedUser(item.id); 
   };
 
   const handleCancel = () => {
     setEditMode(false);
-    setEditedUser({ ...originalUser }); // Revert to the original user data
-    setExpandedUser(originalUser.id); // Keep the accordion of the original user expanded
+    setEditedUser({ ...originalUser }); 
+    setExpandedUser(originalUser.id); 
   };
 
   const filteredUsers = users.filter((user) =>
@@ -90,7 +90,7 @@ export default function HomeScreen() {
 
   const renderUser = ({ item }) => {
     const isExpanded = expandedUser === item.id;
-    const userToEdit = editedUser || item; // Use edited user if exists
+    const userToEdit = editedUser || item; 
 
     return (
       <View style={styles.userContainer}>
@@ -99,7 +99,7 @@ export default function HomeScreen() {
           style={styles.userHeader}
           onPress={() => {
             if (!editMode) {
-              setExpandedUser(isExpanded ? null : item.id); // Only toggle when not in edit mode
+              setExpandedUser(isExpanded ? null : item.id); 
             }
           }}
         >
@@ -302,7 +302,8 @@ const styles = StyleSheet.create({
     fontSize: 12,
   },
   buttonRow: { flexDirection: "row", justifyContent: "flex-end" },
-  editButton: { backgroundColor: "#007BFF", paddingVertical: 10, paddingHorizontal: 15, borderRadius: 5, marginRight: 20 },
+  editButton: { 
+  backgroundColor: "#007BFF", paddingVertical: 10, paddingHorizontal: 15, borderRadius: 5, marginRight: 20 },
   saveButton: { backgroundColor: "#28a745", paddingVertical: 10, paddingHorizontal: 15, borderRadius: 5, marginRight: 20 },
   cancelButton: { backgroundColor: "#808080", padding: 10, borderRadius: 5 },
   deleteButton: { backgroundColor: "#dc3545", padding: 10, borderRadius: 5 },
