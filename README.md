@@ -1,50 +1,38 @@
-# Welcome to your Expo app 👋
+You are a famous hacker who has access to a list of the world's most famous celebrities.
+You have to create a system where you can view and edit their details to hide their public presence.
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+Your mission if you choose to accept it, you have to:
 
-## Get started
+1. Create the user interface provided with the design provided
 
-1. Install dependencies
+2. The user list item is an accordion,
 
-   ```bash
-   npm install
-   ```
+   - when clicked on, it will cause all the other accordions to collapse and enlarge the one which was clicked.
+   - If clicked on the same one it will collapse.
+   - Manage the + and - icons in open or collapsed mode (collapsed = - | open = +)
 
-2. Start the app
+3. Fetch the JSON file provided to fill the list of users. (NOTE - YOU CANNOT EDIT THE JSON FILE)
 
-   ```bash
-    npx expo start
-   ```
+   - You have to calculate the age of the user based on the date of birth provided
+   - gender should be a dropdown (Male | Female | Transgender | Rather not say | Other)
+   - country is a text field
+   - Description is a text area
 
-In the output, you'll find options to open the app in a
+4. Provide buttons to edit or delete
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+   - edit mode will let you edit the details of the user in the exact place
+   - you can only edit the user if the user is an adult
+   - validations to be implemented where a user cannot
+     -- input text in the age field
+     -- input numbers in the nationality
+     -- keep anything empty
+   - when in edit mode you can either save or cancel
+     -- save button will be disabled by default and will enable only if the details have changed
+     -- save click will update the user's details
+     -- cancel will revert the details to their last known state
+     -- you cannot open another accordion while in edit mode
+   - delete mode should alert you if you actually want to delete the user
+     -- if yes - the user will be deleted
+     -- if no - do nothing
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
-
-```bash
-npm run reset-project
-```
-
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
-
-## Learn more
-
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+5. Typescript is a plus
